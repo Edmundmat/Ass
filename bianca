@@ -1,0 +1,102 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+class Module
+{
+public:
+    Module();
+    Module(string pModuleName,string pModuleCode,string pLecturer, int pNrStudent);
+
+    void setModuleName( string pModuleName);
+    void setModuleCode( string pModuleCode);
+    void setLecturer(string pLecturer);
+    void setNrStudents(int pNrStudent);
+
+    string getModuleName();
+    string getModuleCode();
+    string getLecturer();
+    int getNrStudents();
+
+private:
+    string moduleName;
+    string moduleCode;
+    string lecturer;
+    int nrStudents;
+};
+
+Module:: Module()
+{
+    moduleName = " ";
+    moduleCode = " ";
+    lecturer = " ";
+    nrStudents = 0;
+};
+void Module::setModuleName( string pModuleName)
+{
+    moduleName = pModuleName;
+};
+void Module::setModuleCode( string pModuleCode)
+{
+    moduleCode = pModuleCode;
+};
+void Module::setLecturer(string pLecturer)
+{
+    lecturer = pLecturer;
+};
+void Module::setNrStudents(int pNrStudent)
+{
+    nrStudents = pNrStudent;
+};
+
+string Module::getModuleName()
+{
+    return moduleName;
+}
+string Module::getModuleCode()
+{
+    return moduleCode;
+}
+string Module::getLecturer()
+{
+    return lecturer;
+}
+int Module::getNrStudents()
+{
+    return nrStudents;
+}
+
+int main()
+{
+    string pModuleName, pModuleCode, pLecturer;
+    int pNrStudrnt;
+
+    Module FirstModule;
+
+    cout << "Please enter Module name: ";
+    getline(cin,pModuleName);
+    FirstModule.setModuleName(pModuleName);
+
+    cout << "Please enter Module code: ";
+    getline(cin,pModuleCode);
+    FirstModule.setModuleCode(pModuleCode);
+
+    cout << "Please enter Lecturer name: ";
+    getline(cin,pLecturer);
+    FirstModule.setLecturer(pLecturer);
+
+    cout << "Please enter Student: ";
+    cin >> pNrStudrnt;
+    FirstModule.setNrStudents(pNrStudrnt);
+
+    cout << endl << "\t Module details "
+         << endl << "********************************" << endl
+         << endl << "Module Name        : " <<FirstModule.getModuleName()
+         << endl << "ModuleCode         : " <<FirstModule.getModuleCode()
+         << endl << "Lecturer           : " << FirstModule.getLecturer()
+         << endl << "Number of Students : " << FirstModule.getNrStudents()<< endl;
+
+    return 0;
+}
